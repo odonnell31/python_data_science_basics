@@ -5,7 +5,8 @@ Created on Sun Oct 20 22:24:33 2019
 @author: ODsLaptop
 """
 
-# Question: Implement an algorithm to determine is a string has all unique characters.
+# Question:
+# Implement an algorithm to determine is a string has all unique characters.
 
 def all_unique_chars(string):
     # dict of characters in string
