@@ -162,50 +162,8 @@ class Block:
             merk_concat = merk_concat + str(i)
         return(hashlib.sha256(str(merk_concat)).hexdigest())
 
-"""
-class TestAssignment4(unittest.TestCase):
-    def test_chain(self):
-        block = Block(1,"test")
-        self.assertEqual(block.get_size(),0)
-        block.add_transaction("Bob","Alice",50)
-        self.assertEqual(block.get_size(),1)
-        pandas_chain = PandasChain('testnet')
-        self.assertEqual(pandas_chain.get_number_of_blocks(),1)
-        pandas_chain.add_transaction("Bob","Alice",50)
-        pandas_chain.add_transaction("Bob","Alice",51)
-        pandas_chain.add_transaction("Bob","Alice",52)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        self.assertEqual(pandas_chain.get_number_of_blocks(),2)
-        pandas_chain.add_transaction("Bob","Alice",50)
-        pandas_chain.add_transaction("Bob","Alice",51)
-        pandas_chain.add_transaction("Bob","Alice",52)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        pandas_chain.add_transaction("Bob","Alice",53)
-        self.assertEqual(pandas_chain.get_number_of_blocks(),3)
 
-if __name__ == '__main__':
-    unittest.main()
-"""
-
-# Create a PandasChain, a Block, and add a bunch of transactions!
-# Exercise #2. Using PandasChain's get_values(),
-# get all of the transaction values across all blocks in the chain 
-# and plot them. Use an incrementing sequential
-#number for x and the transaction values for y.
-
+# Testing the blockchain...
 block = Block(1,"test")
 block.add_transaction("Bob","Alice",50)
 pandas_chain = PandasChain('testnet')
