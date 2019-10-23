@@ -16,6 +16,7 @@ JOIN apartments on tenants.apartment_id = apartments.apartment_id
 ORDER BY “Rent_Ratio” DESC
 LIMIT 10;
 
+
 # Which city has the greatest number of vacant apartments?
 
 SELECT buildings.city, COUNT(apartments.vacant_status) AS “Vacants”
@@ -29,11 +30,21 @@ ORDER BY “Vacants” DESC;
 
 # Which city has the most pet friendly apartments?
 
-SELECT buildings.city, COUNT(apartments.apartment_id) AS "Pet_Friendly_Apts"
+SELECT buildings.city, COUNT(apartments.apartment_id) AS "Dog friendly apts"
 FROM buildings
 JOIN apartments ON buildings.building_id = apartments.building_id
 WHERE apartments.pet_friendly = 0
 GROUP BY buildings.city
-ORDER BY "Pet_Friendly_Apts" DESC;
+ORDER BY COUNT(apartments.apartment_id) DESC;
 
-SELECT * FROM apartments;
+
+# How many apartments in each city have an address that contains "Rd" or "Road"?
+
+SELECT buildings.city, COUNT(apartments.apartment_ID) AS "Apts on a 'Road'"
+FROM buildings
+JOIN apartments
+ON buildings.building_id = apartments.building_id
+WHERE buildings.building_address LIKE "%Rd"
+	OR buildings.building_address LIKE "%Road"
+GROUP BY buildings.city
+ORDER BY COUNT(apartments.apartment_ID) DESC;
