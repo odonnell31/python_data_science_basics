@@ -119,7 +119,12 @@ for t in range(apartments[apartments.vacant_status == 0].apartment_id.count()):
     new_tenant_df = pd.DataFrame(columns = tenants_columns,
                                  data = [new_tenant])
     tenants = tenants.append(new_tenant_df)
-    
+
+# change dataframe indexes for mySQL
+apartments = apartments.set_index('apartment_id')
+buildings = buildings.set_index('building_id')
+tenants = tenants.set_index('tenant_id')
+
 # export all three dataframes as csv's
 apartments.to_csv("apartments.csv")
 buildings.to_csv("buildings.csv")
