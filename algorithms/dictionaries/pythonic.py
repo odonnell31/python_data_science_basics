@@ -297,7 +297,96 @@ def smallest_number(num_list: list):
 
 assert smallest_number([1,2,3,-4]) == -4
 
-assert smallest_number([1,3,5]) == 3, "assertion shows incorrect"
+#assert smallest_number([1,3,5]) == 3, "assertion shows incorrect"
 
+# object oriented programming
 
+class CountingClicker:
+    """ string to describe the class here """
+    
+    def __init__(self, count = 0):
+        self.count = count
+        
+    def click(self, num_times = 1):
+        self.count += num_times
+        
+    def read(self):
+        return self.count
+    
+    def reset(self):
+        self.count = 0
+       
+# creating a subclass! This inherits the functionality of a class
+class NoResetClicker(CountingClicker):
+    
+    def reset(self):
+        pass
+
+clicker = CountingClicker()
+clicker.click()
+clicker.click()
+print("clicker reads:", clicker.read())
+
+print_whitespace()
+
+# iterables and generators
+
+def generate_range(n:int):
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+        
+for i in generate_range(7):
+    print(f"i: {i}")
+    
+print_whitespace()
+
+names = ["Tom", "Keith", "Cindy", "Aunt Martha"]
+
+for i, name in enumerate(names):
+    print(f"{i}: {name}")
+    
+print_whitespace()
+
+# randomness
+
+import random
+
+four_randoms = [random.random() for x in range(4)]
+print(four_randoms)
+
+print_whitespace()
+
+range_randoms = [random.randrange(100,200) for x in range(5)]
+print(range_randoms)
+
+print_whitespace()
+
+random_numbers = [1,2,3,4,5,6,7,8,9]
+random.shuffle(random_numbers)
+print(random_numbers)
+
+print_whitespace()
+
+best_friend = random.choice(names)
+print("random best friend:", best_friend)
+
+print_whitespace()
+
+    # random smaple without replacement
+random_sample = random.sample(random_numbers, 3)
+print(random_sample)
+
+print_whitespace()
+
+# args and kwargs
+
+def magic(*args, **kwargs):
+    print("unnamed args:", args)
+    print("keyword args:", kwargs)
+    
+magic(1, 2, "seven", [1, 7], key = "keyword!", key2 = 9)
+
+print_whitespace()
 
