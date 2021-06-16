@@ -87,3 +87,8 @@ def enumerate_list(x:list):
         print(f"index {index} has value {value}")
         
 enumerate_list(["one", "two", "three"])
+
+def join_strings(x:list, y:str):
+    print(y.join(x))
+    
+join_strings(x = ['hello', 'world'], y = ' ')
